@@ -1,0 +1,20 @@
+name: C CI
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: make, make test
+      working-directory: ./chapters/1.電卓レベルの言語の作成
+      run: |
+        make
+        make test
